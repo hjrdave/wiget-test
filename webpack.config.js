@@ -1,15 +1,13 @@
 //webpack.config.js
-const path = require('path');
-const widgetConfig = require('./widget.config');
-const HtmlWebpackPlugin = require('html-webpack-plugin');
+//const path = require('path');
 module.exports = {
    entry: './src/index.js',
    output: {
-      path: path.join(__dirname, '/dist'),
-      filename: widgetConfig.name + '.bundle.js'
-   },
-   devServer: {
-      port: 8080
+      filename: `bundle.js`,
+      library: ["SCWidgets"],
+      libraryTarget: 'umd',
+      umdNamedDefine: true,
+      publicPath: '/dist/'
    },
    externals: {
       'react': 'React', // Case matters here,
@@ -29,15 +27,6 @@ module.exports = {
       ]
    },
    plugins:[
-      //  new HtmlWebpackPlugin({
-      //       template: path.join(__dirname,'/src/index.html')
-      //  }) 
-   //    new HtmlWebpackPlugin({
-   //       hash: true,
-   //       rootID: widgetConfig.name,
-   //       template: './public/index.html',
-   //       filename: 'index.html', //relative to root of the application
-   //       bundle: widgetConfig.name + '.bundle.js'
-   //   })
+    
    ]
 }
