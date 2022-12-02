@@ -13,19 +13,17 @@
     <div id="root" data-param="hello"></div>
     <script src="./dist/bundle.js"></script>
     <script>
-        console.log(ReactWidget);
-        let message = 'Foo Moo Choo';
+      
+        //start widget instance
+        const SampleWidget = ReactWidget.initSampleWidget({selector: '#root'});
+
         function setMsg(){
-            const root = document.getElementById('root');
-            root.setAttribute('data-param', 'Hello Again');
-            alert('data-param changed to "Hello Agian"');
+            SampleWidget.unMount();
+            SampleWidget.setProps({message: 'Hello World!'});
         }
         function getMsg(){
-            const root = document.getElementById('root');
-            const msg = root.getAttribute('data-param');
-            alert(`data-param is "${msg}"`);
         }
-        ReactWidget.SampleWidget({selector: '#root'});
+        
     </script>
    
   </body>
