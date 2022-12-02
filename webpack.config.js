@@ -34,9 +34,3 @@ module.exports = {
         extensions: ['.jsx', '.tsx', '.ts', '.js'],
     }
 }
-
-// filename: `bundle.js`,
-// library: ["SCWidgets"],
-// libraryTarget: 'umd',
-// umdNamedDefine: true,
-// publicPath: '/dist/'

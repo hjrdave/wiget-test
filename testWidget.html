@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Test React Widget</title>
+  </head>
+  <body>
+    <noscript>You need to enable JavaScript to run this app.</noscript>
+    <h1>This is a Test html Template</h1>
+    <button onclick="setMsg()">Set Message</button>
+    <button onclick="getMsg()">Get Message</button>
+    <div id="root" data-param="hello"></div>
+    <script src="./dist/bundle.js"></script>
+    <script>
+        console.log(ReactWidget);
+        let message = 'Foo Moo Choo';
+        function setMsg(){
+            const root = document.getElementById('root');
+            root.setAttribute('data-param', 'Hello Again');
+            alert('data-param changed to "Hello Agian"');
+        }
+        function getMsg(){
+            const root = document.getElementById('root');
+            const msg = root.getAttribute('data-param');
+            alert(`data-param is "${msg}"`);
+        }
+        ReactWidget.SampleWidget({selector: '#root'});
+    </script>
+   
+  </body>
+</html>
