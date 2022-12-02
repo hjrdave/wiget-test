@@ -8,20 +8,20 @@
   <body>
     <noscript>You need to enable JavaScript to run this app.</noscript>
     <h1>This is a Test html Template</h1>
-    <button onclick="setMsg()">Set Message</button>
-    <button onclick="getMsg()">Get Message</button>
+    <button onclick="removeApp()">Remove Widget</button>
+    <button onclick="updateProps()">Update Widget Message</button>
     <div id="root" data-param="hello"></div>
     <script src="./dist/bundle.js"></script>
     <script>
       
         //start widget instance
-        const SampleWidget = ReactWidget.initSampleWidget({selector: '#root'});
+        const SampleWidget = ReactWidget.initSampleWidget({selector: '#root', props: {message: 'Hello World'}});
 
-        function setMsg(){
+        function removeApp(){
             SampleWidget.unMount();
-            SampleWidget.setProps({message: 'Hello World!'});
         }
-        function getMsg(){
+        function updateProps(){
+            SampleWidget.setProps({message: 'Hello Again!'});
         }
         
     </script>

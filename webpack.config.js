@@ -1,11 +1,9 @@
 const path = require('path');
 module.exports = {
     mode: 'development',
-    entry: './src/components/widgets/index.tsx',
+    entry: './src/widgets/index.tsx',
     devtool: 'inline-source-map',
     output: {
-        // path: path.join(__dirname, './lib'),
-        // filename: 'bundle.js'
         filename: `bundle.js`,
         library: ["ReactWidget"],
         libraryTarget: 'umd',
@@ -14,7 +12,7 @@ module.exports = {
     },
     devtool: 'inline-source-map',
     devServer: {
-        static: './lib',
+        static: './dist',
     },
     module: {
         rules: [

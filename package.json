@@ -19,7 +19,7 @@
   "scripts": {
     "start": "react-scripts start",
     "build": "react-scripts build",
-    "build:widget": "webpack",
+    "build:widget": "webpack --watch",
     "build:widgetOLD": "webpack-dev-server --open --mode development",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
