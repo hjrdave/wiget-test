@@ -4,8 +4,13 @@ module.exports = {
     entry: './src/components/widgets/index.tsx',
     devtool: 'inline-source-map',
     output: {
-        path: path.join(__dirname, './lib'),
-        filename: 'bundle.js'
+        // path: path.join(__dirname, './lib'),
+        // filename: 'bundle.js'
+        filename: `bundle.js`,
+        library: ["ReactWidget"],
+        libraryTarget: 'umd',
+        umdNamedDefine: true,
+        publicPath: '/dist/'
     },
     devtool: 'inline-source-map',
     devServer: {
@@ -29,3 +34,9 @@ module.exports = {
         extensions: ['.jsx', '.tsx', '.ts', '.js'],
     }
 }
+
+// filename: `bundle.js`,
+// library: ["SCWidgets"],
+// libraryTarget: 'umd',
+// umdNamedDefine: true,
+// publicPath: '/dist/'
