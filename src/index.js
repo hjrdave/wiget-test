@@ -1,16 +1,9 @@
-import React from "react";
-import ReactDOM from "react-dom";
-import SampleWidget from './components/SampleWidget';
+import React from 'react'
+import ReactDOM from 'react-dom'
 
-export default {
-widgets: {
-  SampleWidget: {
-      render: (args) => {
-          ReactDOM.render(
-              <SampleWidget />,
-              document.querySelector("samplewidget")
-          );
-      }
-   }
-}
-}
+const title = 'This is React.'
+
+ReactDOM.render(
+  <div>{title}</div>,
+  document.getElementById('app')
+)
