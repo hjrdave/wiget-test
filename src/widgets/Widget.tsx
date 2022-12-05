@@ -19,7 +19,6 @@ export default class Widget<P>{
     private render(): JSX.Element | void {
         if(this.root !== null){
             const Component = this.Component;
-            console.log('Mounted');
             return this.root.render(<Component {...this.props}/>);
         }
         console.warn('ReactWidget: Target Selector does not exist.');
@@ -28,12 +27,17 @@ export default class Widget<P>{
     //unmounts component
     public unMount(): void {
         this.root?.unmount();
-        console.log('unMounted');
     }
 
     //sets component props
     public setProps(props: React.ComponentProps<any>): void {
         this.props = {...this.props, ...props};
+        this.render();
+    }
+
+    //sets resets widget to default
+    public reset(): void {
+        this.props = {};
         this.render();
     }
 

@@ -1,4 +1,5 @@
 import React from 'react';
+import styles from './SampleWidget.module.scss';
 
 interface Props{
     message?: string;
@@ -16,7 +17,7 @@ export default function SampleWidget({message}: Props){
 
     return(
         <>
-            <div style={{border: '1px solid grey', margin: '1rem', width: '500px', borderRadius: '.3rem'}}>
+            <div className={styles.compContainer}>
                 <div style={{padding: '1rem'}}>
                 <p>This is a Sample Widget</p>
                     <p>Message: {message}</p>
