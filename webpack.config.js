@@ -7,10 +7,11 @@ module.exports = {
     devtool: 'inline-source-map',
     output: {
         filename: `scrwidget.v1.bundle.js`,
+        path: path.join(__dirname, 'public/dist/'),
         library: ["SCRWidget"],
         libraryTarget: 'umd',
         umdNamedDefine: true,
-        publicPath: '/dist/'
+       // publicPath: '/dist/'
     },
     devtool: 'inline-source-map',
     devServer: {

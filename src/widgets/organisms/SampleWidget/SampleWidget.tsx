@@ -6,7 +6,6 @@ interface Props{
 };
 export default function SampleWidget({message}: Props){
 
-    const param = document.getElementById('root')?.getAttribute('data-param');
     const [count, setCount] = React.useState(0);
 
     React.useEffect(() => {
@@ -22,7 +21,6 @@ export default function SampleWidget({message}: Props){
                 <p>This is a Sample Widget</p>
                     <p>Message: {message}</p>
                     <p>Counter: {count}</p>
-                    <button onClick={() => null}>Show Message in React</button>
                 </div>
             </div>
         </>
