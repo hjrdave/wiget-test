@@ -6,8 +6,8 @@ module.exports = {
     entry: './src/widgets/index.tsx',
     devtool: 'inline-source-map',
     output: {
-        filename: `bundle.js`,
-        library: ["ReactWidget"],
+        filename: `scrwidget.v1.bundle.js`,
+        library: ["SCRWidget"],
         libraryTarget: 'umd',
         umdNamedDefine: true,
         publicPath: '/dist/'

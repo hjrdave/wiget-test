@@ -11,11 +11,11 @@
     <button onclick="removeApp()">Remove Widget</button>
     <button onclick="updateProps()">Update Widget Message</button>
     <div id="root" data-param="hello"></div>
-    <script src="./dist/bundle.js"></script>
+    <script src="./dist/scrwidget.v1.bundle.js"></script>
     <script>
       
         //start widget instance
-        const SampleWidget = ReactWidget.initSampleWidget({selector: '#root', props: {message: 'Hello World'}});
+        const SampleWidget = SCRWidget.initSampleWidget({selector: '#root', props: {message: 'Hello World'}});
 
         function removeApp(){
             SampleWidget.unMount();
