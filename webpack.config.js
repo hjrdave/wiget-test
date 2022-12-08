@@ -2,7 +2,7 @@ const path = require('path');
 const MiniCssExtractPlugin = require('mini-css-extract-plugin');
 const isDevelopment = true;
 module.exports = {
-    mode: 'development',
+    mode: 'production',
     entry: './src/widgets/index.tsx',
     devtool: 'inline-source-map',
     output: {
