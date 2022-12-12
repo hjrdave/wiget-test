@@ -10,7 +10,7 @@ export default function SideNav(){
                 <Nav className={`flex-column`}>
                     <div className={'p-3'}>
                         <ListGroupItem className={'pb-2'}><Link to={'/'}>Home</Link></ListGroupItem>
-                        {/* <ListGroupItem><Link to={'/sample-widget'}>Sample Widget</Link></ListGroupItem> */}
+                        <ListGroupItem><Link to={'/footer-widget'}>Footer</Link></ListGroupItem>
                     </div>
                 </Nav>
             </div> 
