@@ -17,10 +17,10 @@ export default function SampleWidget({message}: Props){
     return(
         <>
             <div className={styles.compContainer}>
-                <div style={{padding: '1rem'}}>
-                <p>This is a Sample Widget</p>
-                    <p>Message: {message}</p>
-                    <p>Counter: {count}</p>
+                <div className={`p-3 d-flex flex-column align-items-center`}>
+                    <h4>Counter Widget</h4>
+                    <p><strong>Message:</strong> {message}</p>
+                    <p className={styles.count}>{count}</p>
                 </div>
             </div>
         </>

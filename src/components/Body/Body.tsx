@@ -10,7 +10,7 @@ export default function Body({children}: Props){
         <>
             <Container fluid className={`${styles.compContainer} p-3`}>
                 <Row>
-                    <Col>
+                    <Col className={'d-flex flex-column align-items-center'}>
                         {children}
                     </Col>
                 </Row>
