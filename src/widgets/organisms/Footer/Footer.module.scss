@@ -1,9 +1,28 @@
+@use "../../../styles/variables.scss" as *;
+
 .compContainer{
     width: 100%;
-    border: 1px solid red;
+    background-color: $blue;
 }
 
 .listGroup{
     list-style-type: none;
-    padding-left: 0px;
+    a{
+        color: $blue-link;
+        text-decoration: none;
+    }
+    
+}
+
+.icon{
+    color: $blue-info;
+}
+
+.copyright{
+    font-size: .85rem;
+    background-color: $blue-3;
+    a{
+        color: $blue-link;
+        text-decoration: none;
+    }
 }

@@ -1,67 +1,133 @@
-import {Col, Row} from 'react-bootstrap';
+import { Col, Row, Container } from 'react-bootstrap';
+import Image from '../../atoms/Image';
+import Link from '../../atoms/Link';
+import SCLogoWhite from '../../../images/seven-corners-logo.svg';
 import styles from './Footer.module.scss';
 
-interface Props{
-
+interface Props {
+    copyrightPath?: string,
+    logoPath?: string;
+    address?: {
+        street?: string;
+        city?: string;
+        state?: string;
+        zip?: string;
+        country?: string;
+    }
+    connect?: {
+        twitter?: string;
+        facebook?: string;
+        linkedin?: string;
+        pinterest?: string;
+        youtube?: string;
+        instagram?: string;
+    }
+    markets?: {
+        text?: string;
+        path?: string;
+    }[];
+    products?: {
+        text?: string;
+        path?: string;
+    }[];
+    resources?: {
+        text?: string;
+        path?: string;
+    }[];
+    legal?: {
+        text?: string;
+        path?: string;
+    }[]
 }
 
-export default function Footer({}){
+export default function Footer({ address, connect, markets, products, resources, legal, logoPath }: Props) {
 
-    return(
+    const date = new Date();
+
+    return (
         <>
-            <div className={styles.compContainer}>
-                <Col className='p-3'>
+            <div className={`${styles.compContainer} text-white`}>
+                <Container className={'pt-4'}>
                     <Row>
-                        <Col>
-                            <h5 className="text-uppercase fw-bold">Seven Corners</h5>
-                            <p>303 Congressional Blvd. Carmel , Indiana 46032 USA</p>
-                            <ul className={styles.listGroup}>
-                                <li>Careers</li>
-                                <li>Contact Us</li>
+                        <Col sm={12} md={2} className={'px-3'}>
+                            <Image path={(logoPath) ? logoPath : SCLogoWhite} className={'p-sm-4 p-md-0'}/>
+                            <p className={'pt-2 mb-0 text-muted text-sm-center text-md-start '}>{address?.street}</p>
+                            <p className={'mb-0 text-sm-center text-md-start text-muted'}>{address?.city}, {address?.state} {address?.zip}</p>
+                        </Col>
+                        <Col className={'pt-sm-3 pt-md-0'}>
+                            <h6 className="text-uppercase fw-bold">Connect</h6>
+                            <div className={"pt-2"} style={{ width: '125px' }}>
+                                <div className='d-flex justify-content-around'>
+                                    <Link path={connect?.twitter} target={'_blank'}><i className={`fa-brands fa-twitter fs-4 ${styles.icon}`}></i></Link>
+                                    <Link path={connect?.facebook} target={'_blank'}><i className={`fa-brands fa-facebook fs-4 ${styles.icon}`}></i></Link>
+                                    <Link path={connect?.linkedin} target={'_blank'}><i className={`fa-brands fa-linkedin fs-4 ${styles.icon}`}></i></Link>
+                                </div>
+                                <div className='d-flex justify-content-around pt-3'>
+                                    <Link path={connect?.pinterest} target={'_blank'}><i className={`fa-brands fa-pinterest fs-4 ${styles.icon}`}></i></Link>
+                                    <Link path={connect?.youtube} target={'_blank'}><i className={`fa-brands fa-youtube fs-4 ${styles.icon}`}></i></Link>
+                                    <Link path={connect?.instagram} target={'_blank'}><i className={`fa-brands fa-instagram fs-4 ${styles.icon}`}></i></Link>
+                                </div>
+                            </div>
+                        </Col>
+                        <Col className={'pt-sm-3 pt-md-0'}>
+                            <h6 className="text-uppercase fw-bold">Our Markets</h6>
+                            <ul className={`ps-0 ${styles.listGroup}`}>
+                                {
+                                    markets?.map((item) => (
+                                        <Link path={item.path} target={'_blank'}>
+                                            <li>{item.text}</li>
+                                        </Link>
+                                    ))
+                                }
                             </ul>
                         </Col>
-                        <Col>
-                        <h5 className="text-uppercase fw-bold">Connect</h5>
-                            <p>Social Media Icons</p>
-                        </Col>
-                        <Col>
-                        <h5 className="text-uppercase fw-bold">Our Markets</h5>
-                            <ul className={styles.listGroup}>
-                                <li>Consumer</li>
-                                <li>Insurance</li>
-                                <li>Government</li>
-                                <li>Solutions</li>
-                                <li>Agents</li>
+                        <Col sm={6} md={3} className={'mt-sm-3 mt-md-0'}>
+                            <h6 className="text-uppercase fw-bold">Products</h6>
+                            <ul className={`ps-0 ${styles.listGroup}`}>
+                                {
+                                    products?.map((item) => (
+                                        <Link path={item.path} target={'_blank'}>
+                                        <li>{item.text}</li>
+                                    </Link>
+                                    ))
+                                }
                             </ul>
                         </Col>
-                        <Col>
-                        <h5 className="text-uppercase fw-bold">Products</h5>
-                            <ul className={styles.listGroup}>
-                                <li>Roundtrip&reg; for U.S. Residents</li>
-                                <li>Seven Corners&reg; Travel Medical Plans</li>
-                                <li>Seven Corners&reg; Student Plans Get Away USA</li>
-                                <li>Wander&reg; Frequent Travelers Plus</li>
-                                <li>Inbound&reg; USA Plans</li>
-                                <li>Medical Evacuation and Repatriation</li>
-                            </ul>
-                        </Col>
-                        <Col>
-                            <h5 className="text-uppercase fw-bold">Resources</h5>
-                            <ul className={styles.listGroup}>
-                                <li>About Us</li>
-                                <li>24 Hour Travel</li>
-                                <li>Assistance</li>
-                                <li>Services & Discounts</li>
-                                <li>Claims</li>
-                                <li>F.A.Q</li>
-                                <li>Glossary</li>
-                                <li>Developer Portal</li>
-                                <li>System Status</li>
-                                <li>Media Contact</li>
+                        <Col sm={6} md={3} className={'mt-sm-3 mt-md-0'}>
+                            <h6 className="text-uppercase fw-bold">Resources</h6>
+                            <ul className={`ps-0 ${styles.listGroup}`}>
+                                {
+                                    resources?.map((item) => (
+                                        <Link path={item.path} target={'_blank'}>
+                                        <li>{item.text}</li>
+                                    </Link>
+                                    ))
+                                }
                             </ul>
                         </Col>
                     </Row>
-                </Col>
+                </Container>
+                <Container fluid>
+                    <Row>
+                        <Col className={`py-2 ${styles.copyright}`}>
+                            <p className={'mb-0 text-center'}><small>Copyright &copy; {date.getFullYear()} Seven Corners Inc. All rights reserved.</small></p>
+                            <p className={'mb-0 pt-1 text-center'}>
+                                <small>
+                                    {
+                                        legal?.map((item, index) => (
+                                            <>
+                                                 <Link path={item.path} target={'_blank'}>{item?.text}</Link>
+                                                {
+                                                    (legal.length !== (index + 1)) ? <>&nbsp; | &nbsp;</> : ''
+                                                }
+                                            </>
+                                        ))
+                                    }
+                                </small>
+                            </p>
+                        </Col>
+                    </Row>
+                </Container>
             </div>
         </>
     )
