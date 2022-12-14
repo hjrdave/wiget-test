@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <title>Widget Builder: Preview</title>
+    <!-- CSS only -->
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-rbsA2VBKQhggwzxH7pPCaAqO46MgnOM80zW1RWuH61DGLwZJEdK2Kadq2F9CUG65" crossorigin="anonymous">
+  </head>
+  <body>
+    <div class="App" style="background-color: #DDDDDD">
+        <nav class="navbar bg-dark" style="background: black!important;
+        height: 50px">
+          <div class="container-fluid">
+            <span class="navbar-brand mb-0 h1 text-white">
+              <i class="fa-solid fa-code pe-2 text-white"></i>
+              Widget Builder
+            </span>
+            <a href='http://localhost:3000/'>Designer Mode</a>
+          </div>
+        </nav>
+        <div class='d-flex'>
+          <div style="height: calc(100vh - 50px)"></div>
+          <div class='d-flex flex-column justify-content-between' style='width: 100%'>
+            <div class='container-fluid p-3'>
+              <div class='row'>
+                  <div class='col'>
+                      <h2>Preview: Footer Widget</h2>
+                      <noscript>You need to enable JavaScript to run this app.</noscript>
+                      <div id="root"></div>
+                  </div>
+              </div>
+            </div>
+            <div class='p-1 d-flex justify-content-center'>
+              <small style='font-size: .75rem;' >Copyright 2023 Widget Builder</small>
+            </div>
+          </div>
+        </div>
+    </div>
+    <script src="https://kit.fontawesome.com/bc8edc6f62.js" crossorigin="anonymous"></script>
+
+    <!--Widget Logic-->
+    <script src="/dist/scrwidget.v1.bundle.js"></script>
+    <script>
+      
+        //start widget instance
+        const FooterWidget = SCRWidget.initFooter({selector: '#root', props: {
+            copyrightPath: 'https://www.sevencorners.com/about/corporate/about-us',
+            address: {
+                    street: '303 Congressional Blvd.',
+                    city: 'Carmel',
+                    state: 'Indiana',
+                    zip: '46032',
+                    country: 'USA'
+                },
+            connect: {
+                    twitter: 'https://twitter.com/sevencornersinc',
+                    facebook: 'https://www.facebook.com/sevencornersinc',
+                    linkedin: 'https://www.linkedin.com/company/251002',
+                    pinterest: 'https://www.pinterest.com/SevenCorners/pins/',
+                    youtube: 'https://www.youtube.com/channel/UCK0sBHm6pAiRQbpP1CmDohA',
+                    instagram: 'https://www.instagram.com/seven.corners.inc/',
+                },
+            markets: [
+                    {
+                        text: 'Consumer Insurance', 
+                        path: 'https://www.sevencorners.com/'
+                    },
+                    {
+                        text: 'Government Solutions', 
+                        path: 'https://www.sevencorners.com/about/gov'
+                    },
+                    {
+                        text: 'Agents', 
+                        path: 'https://www.sevencorners.com/about/agent'
+                    },
+                ],
+              products: [
+              {
+                        text: 'Roundtrip® for U.S. Residents', 
+                        path: 'https://www.sevencorners.com/plans/trip-protection'
+                    },
+                    {
+                        text: 'Seven Corners® Travel Medical Plans', 
+                        path: 'https://www.sevencorners.com/plans/travel-medical-insurance'
+                    },
+                    {
+                        text: 'Seven Corners® Student Plans Get Away USA', 
+                        path: 'https://www.sevencorners.com/plans/student-travel-insurance'
+                    },
+                    {
+                        text: 'Wander® Frequent Travelers Plus', 
+                        path: 'https://www.sevencorners.com/coronavirus/annual-travel-insurance'
+                    },
+                    {
+                        text: 'Inbound® USA Plans', 
+                        path: 'https://www.sevencorners.com/plans/visitors-insurance'
+                    },
+                    {
+                        text: 'Medical Evacuation and Repatriation', 
+                        path: 'https://www.sevencorners.com/plans/medevac-repatriation-insurance'
+                    }
+              ],
+              resources: [
+              {
+                        text: 'About Us',
+                        path: 'https://www.sevencorners.com/about/corporate'
+                    },
+                    {
+                        text: '24 Hour Travel Assistance',
+                        path: 'https://www.sevencorners.com/about/assist'
+                    },
+                    {
+                        text: 'Services & Discounts',
+                        path: 'https://www.sevencorners.com/about/other-services/discounts'
+                    },
+                    {
+                        text: 'Claims',
+                        path: 'https://www.sevencorners.com/about/self-service/claims'
+                    },
+                    {
+                        text: 'F.A.Q',
+                        path: 'https://www.sevencorners.com/faq'
+                    },
+                    {
+                        text: 'Glossary',
+                        path: 'https://www.sevencorners.com/faq/glossary'
+                    },
+                    {
+                        text: 'Developer Portal',
+                        path: 'https://www.sevencorners.com/developer'
+                    },
+                    {
+                        text: 'System Status',
+                        path: 'https://status.sevencorners.com/'
+                    },
+                    {
+                        text: 'Media Contact',
+                        path: ''
+                    },
+                    {
+                        text: 'Careers',
+                        path: 'https://www.sevencorners.com/about/corporate/careers'
+                    },
+                    {
+                        text: 'Contact Us',
+                        path: 'https://www.sevencorners.com/about/contact'
+                    }
+              ],
+              legal: [
+              {
+                        text: 'Privacy',
+                        path: 'https://www.sevencorners.com/about/legal/privacy-policy'
+                    },
+                    {
+                        text: 'Cookies',
+                        path: 'https://www.sevencorners.com/about/legal/cookies'
+                    },
+                    {
+                        text: 'Terms of Use',
+                        path: 'https://www.sevencorners.com/about/legal/terms-of-use'
+                    },
+                    {
+                        text: 'Security',
+                        path: 'https://www.sevencorners.com/about/legal/information-security'
+                    }
+              ]
+          }});
+
+        function removeApp(){
+          FooterWidget.unMount();
+        }
+        function updateProps(){
+          FooterWidget.setProps({});
+        }
+        
+    </script>
+   <!--END Widget Logic-->
+
+  </body>
+</html>

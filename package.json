@@ -19,6 +19,7 @@
     "react-router": "^6.4.4",
     "react-router-dom": "^6.4.4",
     "react-scripts": "5.0.1",
+    "treble-gsm": "file:treble-gsm-4.0.1.tgz",
     "typescript": "^4.9.3",
     "web-vitals": "^2.1.4"
   },
@@ -26,6 +27,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "build:widget": "webpack --watch",
+    "create:widget": "node scripts/create-widget.js",
     "test": "react-scripts test"
   },
   "eslintConfig": {

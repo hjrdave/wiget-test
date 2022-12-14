@@ -1,10 +1,11 @@
+import React from 'react';
 import { Col, Row, Container } from 'react-bootstrap';
 import Image from '../../atoms/Image';
 import Link from '../../atoms/Link';
 import SCLogoWhite from '../../../images/seven-corners-logo.svg';
 import styles from './Footer.module.scss';
 
-interface Props {
+export interface Props {
     copyrightPath?: string,
     logoPath?: string;
     address?: {
@@ -76,10 +77,12 @@ export default function Footer({ address, connect, markets, products, resources,
                                 <h6 className="text-uppercase fw-bold">Our Markets</h6>
                                 <ul className={`ps-0 ${styles.listGroup}`}>
                                     {
-                                        markets?.map((item) => (
-                                            <Link path={item.path} target={'_blank'}>
-                                                <li>{item.text}</li>
-                                            </Link>
+                                        markets?.map((item, index) => (
+                                            <React.Fragment key={index} >
+                                                <Link path={item.path} target={'_blank'}>
+                                                    <li>{item.text}</li>
+                                                </Link>
+                                            </React.Fragment>
                                         ))
                                     }
                                 </ul>
@@ -90,10 +93,12 @@ export default function Footer({ address, connect, markets, products, resources,
                                 <h6 className="text-uppercase fw-bold">Products</h6>
                                 <ul className={`ps-0 ${styles.listGroup}`}>
                                     {
-                                        products?.map((item) => (
-                                            <Link path={item.path} target={'_blank'}>
-                                            <li>{item.text}</li>
-                                        </Link>
+                                        products?.map((item, index) => (
+                                            <React.Fragment key={index}>
+                                                <Link path={item.path} target={'_blank'}>
+                                                    <li>{item.text}</li>
+                                                </Link>
+                                            </React.Fragment>
                                         ))
                                     }
                                 </ul>
@@ -104,10 +109,12 @@ export default function Footer({ address, connect, markets, products, resources,
                                 <h6 className="text-uppercase fw-bold">Resources</h6>
                                 <ul className={`ps-0 ${styles.listGroup}`}>
                                     {
-                                        resources?.map((item) => (
-                                            <Link path={item.path} target={'_blank'}>
-                                            <li>{item.text}</li>
-                                        </Link>
+                                        resources?.map((item, index) => (
+                                            <React.Fragment key={index}>
+                                                <Link path={item.path} target={'_blank'}>
+                                                    <li>{item.text}</li>
+                                                </Link>
+                                            </React.Fragment>
                                         ))
                                     }
                                 </ul>
@@ -123,12 +130,12 @@ export default function Footer({ address, connect, markets, products, resources,
                                 <small>
                                     {
                                         legal?.map((item, index) => (
-                                            <>
+                                            <React.Fragment key={index}>
                                                  <Link path={item.path} target={'_blank'}>{item?.text}</Link>
                                                 {
                                                     (legal.length !== (index + 1)) ? <>&nbsp; | &nbsp;</> : ''
                                                 }
-                                            </>
+                                            </React.Fragment>
                                         ))
                                     }
                                 </small>
