@@ -1,5 +1,7 @@
 @use "../../../variables.scss" as *;
 
 .compContainer{
-
+    background-color: $blue;
+    width: 100%;
+    height: 50px;
 }
