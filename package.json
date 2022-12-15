@@ -2,6 +2,7 @@
   "name": "react-widget",
   "version": "0.1.0",
   "private": true,
+  "type": "module",
   "dependencies": {
     "@testing-library/jest-dom": "^5.16.5",
     "@testing-library/react": "^13.4.0",
@@ -27,7 +28,7 @@
     "start": "react-scripts start",
     "build": "react-scripts build",
     "build:widget": "webpack --watch",
-    "create:widget": "node scripts/create-widget.js",
+    "create:widget": "node scripts/create-widget",
     "test": "react-scripts test"
   },
   "eslintConfig": {
@@ -58,6 +59,7 @@
     "css-loader": "^6.7.2",
     "html-webpack-plugin": "^5.5.0",
     "mini-css-extract-plugin": "^2.7.1",
+    "prompt-sync": "^4.2.0",
     "sass": "^1.56.1",
     "sass-loader": "^13.2.0",
     "style-loader": "^3.3.1",

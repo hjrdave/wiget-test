@@ -3,9 +3,9 @@
  * based on https://ohsnail.com/building-a-react-app-as-a-widget-using-webpack/ 
  */
 import React from 'react';
- import {default as SampleWidgetComp} from './organisms/SampleWidget';
+ import {default as SampleWidgetComp} from './components/organisms/SampleWidget';
  import Widget from './Widget';
- import {default as FooterWidget} from './organisms/Footer';
+ import {default as FooterWidget} from './components/organisms/Footer';
  import {IWidget} from './interfaces';
 
 

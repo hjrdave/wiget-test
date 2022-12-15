@@ -1,0 +1,15 @@
+@use '../../../widgets/variables.scss' as *;
+
+.compContainer{
+    height: calc(100vh - 50px);
+    width: 200px;
+    color: white;
+    background-color: $dark!important;
+    a{
+        color: white;
+        text-decoration: none;
+        &:hover{
+            color: $grey;
+        }
+    }
+}
