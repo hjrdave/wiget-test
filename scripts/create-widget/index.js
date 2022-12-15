@@ -3,7 +3,7 @@ import promptSync from 'prompt-sync';
 import {widgetTemplate as createWidgetTemplate} from './templates/Widget.js';
 import {widgetIndexTemplate as createWidgetIndexTemplate} from './templates/Widget-index.js';
 import {sceneTemplate as createSceneTemplate} from './templates/scene.js';
-//import {Navigation as NavigationData} from '../../src/builder/Navigation.ts';
+import {Navigation as NavigationData} from '../../src/builder/Navigation.js';
 
 promptSync();
 const prompt = promptSync({sigint: true});
@@ -55,13 +55,13 @@ const generateWidgetFiles = () => {
 }
 
 //update navigation data file in App
-// const updateAppNavigationData = () => {
-//   const nav = [...NavigationData, {text: widgetName[0].toUpperCase() + widgetName.substring(1), path: `widget/${widgetName}`}];
-//   fs.writeFile(`./src/builder/Navigation.ts`, `export const Navigation = [...${nav}]`, function (err) {
-//     if (err) throw err;
-//     console.log(`App navigation data updated.`);
-//   });
-// }
+const updateAppNavigationData = () => {
+  const nav = [...NavigationData, {text: widgetName[0].toUpperCase() + widgetName.substring(1), path: `widget/${widgetName}`}];
+  fs.writeFile(`./src/builder/Navigation.js`, `export const Navigation = ${JSON.stringify(nav)}`, function (err) {
+    if (err) throw err;
+    console.log(`App navigation data updated.`);
+  });
+}
 
 //Start Widget creation
 fs.access(widgetOutputPath, (error) => {
@@ -94,7 +94,7 @@ fs.access(sceneOutputPath, (error) => {
 });
 
 //update navigation data
-//updateAppNavigationData();
+updateAppNavigationData();
 
 
 
