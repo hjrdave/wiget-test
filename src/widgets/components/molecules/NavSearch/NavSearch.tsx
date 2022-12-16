@@ -8,9 +8,10 @@ interface Props {
     active?: boolean;
     onClick?: () => void;
     onFocusOut?: () => void;
+    className?: string;
 };
 
-export default function NavSearch({ active, onClick, onFocusOut }: Props) {
+export default function NavSearch({ active, onClick, onFocusOut, className }: Props) {
 
     const { value, bind } = useInput('')
     const [isFocusOutDisabled, setIsFocusOutDisabled] = React.useState(false);
@@ -47,7 +48,7 @@ export default function NavSearch({ active, onClick, onFocusOut }: Props) {
                             </Link>
                         </Button>
                     </InputGroup> :
-                    <Nav.Link className={'px-2 text-white'} onClick={onClick}>
+                    <Nav.Link className={`text-white ${className}`} onClick={onClick}>
                         <i className="fa-solid fa-magnifying-glass pe-2" style={{ color: '#F5852B' }}></i>
                         Search
                     </Nav.Link>

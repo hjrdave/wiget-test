@@ -23,15 +23,15 @@ export default function Header({ logoPath, navItems }: Props) {
 
     return (
         <>
-            <Navbar variant={'dark'} expand="lg" className={`py-3 ${styles.compContainer}`}>
+            <Navbar variant={'dark'} expand="lg" className={`py-sm-0 py-md-3 ${styles.compContainer}`}>
                 <Container>
                     <Navbar.Brand href="https://www.sevencorners.com/">
-                        <Image path={(logoPath) ? logoPath : SCLogoWhite} className={'p-sm-4 p-md-0'} width={'150px'} />
+                        <Image path={(logoPath) ? logoPath : SCLogoWhite} className={`p-sm-4 p-md-0 ${styles.logo}`} />
                     </Navbar.Brand>
                     <Navbar.Toggle aria-controls="basic-navbar-nav" />
                     <Navbar.Collapse id="basic-navbar-nav">
-                        <Nav style={{ width: '100%' }}>
-                            <Col className={'d-flex'}>
+                        <Nav className={'p-2 p-lg-0'} style={{ width: '100%' }}>
+                            <Col className={'d-lg-flex'}>
                                 {
                                     navItems?.map((item, index) => (
                                         <React.Fragment key={index}>
@@ -39,17 +39,17 @@ export default function Header({ logoPath, navItems }: Props) {
                                                 text={item?.text}
                                                 path={item?.path}
                                                 subItems={item?.subItems}
-                                                className={styles.navLink}
+                                                className={`${styles.navLink} text-white`}
                                             />
                                         </React.Fragment>
                                     ))
                                 }
                             </Col>
-                            <Col className={'d-flex justify-content-end align-items-center'}>
+                            <Col className={'d-lg-flex justify-content-end align-items-center'}>
                                 {
                                     (!isSearchActive) ?
                                         <>
-                                            <Nav.Link href={'https://www.sevencorners.com/about/contact'} className={'px-2 text-white'}>
+                                            <Nav.Link href={'https://www.sevencorners.com/about/contact'} className={`px-lg-4 text-white ${styles.navLink}`}>
                                                 <i className="fa-solid fa-phone pe-2" style={{ color: '#F5852B' }}></i>
                                                 Contact
                                             </Nav.Link>
@@ -66,7 +66,7 @@ export default function Header({ logoPath, navItems }: Props) {
                                                         path: 'https://agents.sevencorners.com/'
                                                     }
                                                 ]}
-                                                className={styles.navLink}
+                                                className={`pe-2 ${styles.navLink}`}
                                             />
                                         </> : null
                                 }
@@ -74,6 +74,7 @@ export default function Header({ logoPath, navItems }: Props) {
                                     active={isSearchActive}
                                     onClick={() => setIsSearchActive(true)}
                                     onFocusOut={() => setIsSearchActive(false)}
+                                    className={styles.navLink}
                                 />
                             </Col>
                         </Nav>
