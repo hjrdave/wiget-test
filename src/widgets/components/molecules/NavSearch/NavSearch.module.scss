@@ -1,0 +1,14 @@
+@use '../../../variables.scss' as *;
+@use "~/node_modules/bootstrap/scss/functions" as fn;
+
+.compContainer {}
+
+.searchBtn {
+    background-color: $orange !important;
+    border: $orange !important;
+
+    &:hover {
+        background-color: darken($orange, 50%) !important;
+        border: darken($orange, 50%) !important;
+    }
+}

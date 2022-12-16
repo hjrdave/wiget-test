@@ -1,7 +1,16 @@
 @use "../../../variables.scss" as *;
 
-.compContainer{
+.compContainer {
     background-color: $blue;
     width: 100%;
-    height: 50px;
+
+
+}
+
+.navLink {
+    color: white !important;
+
+    :global(.nav-link) {
+        color: white !important;
+    }
 }
