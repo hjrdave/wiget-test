@@ -14,6 +14,7 @@ export default function Scene({ }: Props) {
                 navItems={[
                     {
                         text: 'Products',
+                        type: 'megaMenu',
                         subItems: []
                     },
                     {

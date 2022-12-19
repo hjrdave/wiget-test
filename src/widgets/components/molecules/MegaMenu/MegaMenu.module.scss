@@ -1,0 +1,9 @@
+@use '../../../variables.scss' as *;
+
+.compContainer {
+    min-width: 700px;
+
+    p {
+        font-size: $font-size-base - .1rem;
+    }
+}

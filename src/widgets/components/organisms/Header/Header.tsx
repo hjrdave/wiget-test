@@ -5,12 +5,14 @@ import Image from '../../atoms/Image';
 import SCLogoWhite from '../../../images/seven-corners-logo.svg';
 import NavItem from '../../molecules/NavItem';
 import NavSearch from '../../molecules/NavSearch';
+import MegaMenu from '../../molecules/MegaMenu';
 import styles from './Header.module.scss';
 interface Props {
     logoPath?: string;
     navItems?: {
         text?: string;
         path?: string;
+        type?: 'megaMenu';
         subItems?: {
             text?: string;
             path?: string;
@@ -38,6 +40,7 @@ export default function Header({ logoPath, navItems }: Props) {
                                             <NavItem
                                                 text={item?.text}
                                                 path={item?.path}
+                                                type={item.type}
                                                 subItems={item?.subItems}
                                                 className={`${styles.navLink} text-white`}
                                             />
