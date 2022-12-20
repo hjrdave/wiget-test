@@ -2,7 +2,7 @@ import React from 'react';
 import { Col, Row, Container } from 'react-bootstrap';
 import Image from '../../atoms/Image';
 import Link from '../../atoms/Link';
-import SCLogoWhite from '../../../images/seven-corners-logo.svg';
+//import SCLogoWhite from '../../../images/seven-corners-logo.svg';
 import styles from './Footer.module.scss';
 
 export interface Props {
@@ -51,7 +51,7 @@ export default function Footer({ address, connect, markets, products, resources,
                 <Container>
                     <Row className={'px-3'}>
                         <Col sm={12} md={6} lg={2} className={'px-3 pt-4'}>
-                            <Image path={(logoPath) ? logoPath : SCLogoWhite} className={'p-sm-4 p-md-0'} />
+                            {/* <Image path={(logoPath) ? logoPath : SCLogoWhite} className={'p-sm-4 p-md-0'} /> */}
                             <p className={`pt-2 mb-0 text-sm-center text-md-start ${styles.address}`}>{address?.street}</p>
                             <p className={`mb-0 text-sm-center text-md-start ${styles.address}`}>{address?.city}, {address?.state} {address?.zip}</p>
                         </Col>
@@ -131,7 +131,7 @@ export default function Footer({ address, connect, markets, products, resources,
                                     {
                                         legal?.map((item, index) => (
                                             <React.Fragment key={index}>
-                                                 <Link path={item.path} target={'_blank'}>{item?.text}</Link>
+                                                <Link path={item.path} target={'_blank'}>{item?.text}</Link>
                                                 {
                                                     (legal.length !== (index + 1)) ? <>&nbsp; | &nbsp;</> : ''
                                                 }
