@@ -30,6 +30,7 @@
                         <div class='col'>
                             <h2>Preview: Content Block Widget</h2>
                             <noscript>You need to enable JavaScript to run this app.</noscript>
+                            <p>{{firstName}} {{lastName}} is a {{nickName}}!</p>
                             <div id="root"></div>
                         </div>
                     </div>
@@ -50,22 +51,27 @@
         const ContentBlockWidget = SCRWidget.initContentBlock({
             selector: '#root',
             props: {
+                loading: true,
+                error: null,
                 type: 'html',
+                content: ``,
+                bindData: {}
+            }
+        });
+
+        function updateProps() {
+            ContentBlockWidget.setProps({
                 content: `
-                <div class='mt-3 p-3' style='border: 1px solid grey; width: 100%; border-radius: .25rem;'>
-                    <h3>{{firstName}} {{lastName}} is a {{nickName}}!</h3>
-                </div>
+                    <div class='mt-3 p-3' style='border: 1px solid grey; width: 100%; border-radius: .25rem;'>
+                        <h3>{{firstName}} {{lastName}} is a {{nickName}}!</h3>
+                    </div>
                 `,
                 bindData: {
                     firstName: 'Chuck',
                     lastName: 'Noris',
                     nickName: 'Cowboy Ninja'
                 }
-            }
-        });
-
-        function updateProps() {
-            ContentBlockWidget.setProps({});
+            });
         }
 
     </script>
