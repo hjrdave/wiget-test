@@ -51,8 +51,7 @@ export default function SCFooter({ address, connect, markets, products, resource
                 <Container>
                     <Row className={'px-3'}>
                         <Col sm={12} md={6} lg={2} className={'px-3 pt-4'}>
-                            <p className={styles.foo}>foo</p>
-                            {/* <Image path={(logoPath) ? logoPath : SCLogoWhite} className={'p-sm-4 p-md-0'} /> */}
+                            <Image path={'/'} className={'p-sm-4 p-md-0'} alt={'Seven Corners'} />
                             <p className={`pt-2 mb-0 text-sm-center text-md-start ${styles.address}`}>{address?.street}</p>
                             <p className={`mb-0 text-sm-center text-md-start ${styles.address}`}>{address?.city}, {address?.state} {address?.zip}</p>
                         </Col>
