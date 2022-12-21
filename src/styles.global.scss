@@ -1,7 +1,7 @@
-@use '../widgets/variables.scss' as *;
+@use './variables.scss' as *;
 @import "~bootstrap/scss/bootstrap";
 
 
-.App{
+.App {
     background-color: $grey-3;
 }

@@ -7,9 +7,12 @@ import styles from './CodeEditor.module.scss';
 
 interface Props {
     onChange?: (value?: string) => void;
+    value?: string;
+    type?: 'html' | 'css';
+    defaultValue?: string;
 };
 
-export default function CodeEditor({ onChange: _onChange }: Props) {
+export default function CodeEditor({ onChange: _onChange, value, type, defaultValue }: Props) {
 
     return (
         <>
@@ -19,10 +22,16 @@ export default function CodeEditor({ onChange: _onChange }: Props) {
                         className={styles.editor}
                         height={"35vh"}
                         width={"100%"}
-                        defaultLanguage="html"
-                        defaultValue="<!-- HTML -->"
+                        defaultLanguage={(type) ? type : 'html'}
+                        defaultValue={defaultValue}
                         theme={'vs-dark'}
                         onChange={_onChange}
+                        value={value}
+                        onMount={(editor) => {
+                            setTimeout(function () {
+                                editor.getAction('editor.action.formatDocument').run();
+                            }, 10)
+                        }}
                     />
                 </Col>
             </div>

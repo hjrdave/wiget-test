@@ -1,7 +1,7 @@
 
 import React from 'react';
-import CodeEditor from '../../../widgets/components/organisms/CodeEditor';
-import ContentBlock from '../../../widgets/components/organisms/ContentBlock';
+import CodeEditor from '../../components/organisms/CodeEditor';
+import ContentBlock from '../../components/organisms/ContentBlock';
 
 interface Props {
 

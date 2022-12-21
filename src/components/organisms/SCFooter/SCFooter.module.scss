@@ -1,35 +1,48 @@
 @use "../../../variables.scss" as *;
 
-.compContainer{
+.foo {
+    color: red;
+}
+
+.compContainer {
     width: 100%;
     background-color: $blue;
 }
 
-.listGroup{
+.listGroup {
     list-style-type: none;
-    a{
+
+    a {
         color: #49A8E5;
         text-decoration: none;
-        &:hover{
+
+        &:hover {
             color: $blue-link;
         }
     }
-    
+
+
+
 }
 
-.icon{
+.icon {
     color: $blue-info;
 }
 
-.copyright{
+.copyright {
     font-size: .85rem;
     background-color: $blue-3;
-    a{
+
+    a {
         color: #49A8E5;
         text-decoration: none;
     }
 }
 
-.address{
-    color: rgba(255,255,255,0.5);
+.address {
+    color: rgba(255, 255, 255, 0.5);
+}
+
+:global(.text-white) {
+    color: red !important
 }

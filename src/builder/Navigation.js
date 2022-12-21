@@ -1,1 +1,0 @@
-export const Navigation = [{ "text": "Footer", "path": "widgets/footer" }, { "text": "Header", "path": "widgets/header" }, { "text": "Code Editor", "path": "widgets/code-editor" }]
