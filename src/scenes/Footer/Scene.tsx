@@ -1,5 +1,8 @@
 import React from 'react';
+import { Button, ButtonGroup } from 'react-bootstrap';
+import BreakpointBtnGRoup from '../../components/atoms/BreakpointBtnGroup';
 import Footer from "./ExportComp";
+import DesignViewFrame from '../../components/atoms/DesignViewFrame';
 import CodeOutput from '../../components/organisms/CodeOutput';
 import { footerProps } from './footer-props';
 
@@ -10,10 +13,14 @@ import cssNameSpaces from './ExportComp/Footer.module.scss';
 
 export default function Scene() {
 
+    const [screenSize, setScreenSize] = React.useState('auto');
+
     return (
         <>
 
-            <div className='d-flex justify-content-end w-100 pb-3'>
+            <div className='d-flex justify-content-between w-100 pb-3'>
+                <div></div>
+                {/* <BreakpointBtnGRoup onChange={(size) => setScreenSize(size)} /> */}
                 <CodeOutput
                     compProps={footerProps}
                     rawCssString={rawCssString}
@@ -23,7 +30,9 @@ export default function Scene() {
             </div>
 
             {/* Design View */}
-            <Footer {...footerProps} />
+            <DesignViewFrame maxWidth={screenSize}>
+                <Footer {...footerProps} />
+            </DesignViewFrame>
         </>
     )
 };
