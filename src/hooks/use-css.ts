@@ -1,4 +1,4 @@
-type TRawCSSImport = {
+export type TRawCSSImport = {
     readonly [key: string]: string;
 }
 const useCSS = () => {

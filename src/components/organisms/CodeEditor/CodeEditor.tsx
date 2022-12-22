@@ -10,9 +10,10 @@ interface Props {
     value?: string;
     type?: 'html' | 'css';
     defaultValue?: string;
+    height?: string;
 };
 
-export default function CodeEditor({ onChange: _onChange, value, type, defaultValue }: Props) {
+export default function CodeEditor({ onChange: _onChange, value, type, defaultValue, height }: Props) {
 
     return (
         <>
@@ -20,7 +21,7 @@ export default function CodeEditor({ onChange: _onChange, value, type, defaultVa
                 <Col>
                     <Editor
                         className={styles.editor}
-                        height={"35vh"}
+                        height={(height) ? height : "400px"}
                         width={"100%"}
                         defaultLanguage={(type) ? type : 'html'}
                         defaultValue={defaultValue}
