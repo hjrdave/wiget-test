@@ -1,7 +1,8 @@
 @use "../../../variables.scss" as *;
 
-.foo {
-    color: red;
+:global(.text-white) {
+    color: red !important;
+    transform: rotate(30)
 }
 
 .compContainer {
@@ -41,8 +42,4 @@
 
 .address {
     color: rgba(255, 255, 255, 0.5);
-}
-
-:global(.text-white) {
-    color: red !important
 }

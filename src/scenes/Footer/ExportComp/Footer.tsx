@@ -1,9 +1,8 @@
 import React from 'react';
 import { Col, Row, Container } from 'react-bootstrap';
-import Image from '../../atoms/Image';
-import Link from '../../atoms/Link';
-//import SCLogoWhite from '../../../images/seven-corners-logo.svg';
-import styles from './SCFooter.module.scss';
+import Image from '../../../components/atoms/Image';
+import Link from '../../../components/atoms/Link';
+import styles from './Footer.module.scss';
 
 export interface Props {
     copyrightPath?: string,
@@ -41,7 +40,7 @@ export interface Props {
     }[]
 }
 
-export default function SCFooter({ address, connect, markets, products, resources, legal, logoPath }: Props) {
+export default function Footer({ address, connect, markets, products, resources, legal }: Props) {
 
     const date = new Date();
 
