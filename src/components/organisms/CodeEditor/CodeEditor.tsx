@@ -8,7 +8,7 @@ import styles from './CodeEditor.module.scss';
 interface Props {
     onChange?: (value?: string) => void;
     value?: string;
-    type?: 'html' | 'css';
+    type?: 'html' | 'css' | 'javascript';
     defaultValue?: string;
     height?: string;
 };
@@ -28,7 +28,7 @@ export default function CodeEditor({ onChange: _onChange, value, type, defaultVa
                         theme={'vs-dark'}
                         onChange={_onChange}
                         value={value}
-                        onMount={(editor) => {
+                        onMount={(editor, monaco) => {
                             setTimeout(function () {
                                 editor.getAction('editor.action.formatDocument').run();
                             }, 10)

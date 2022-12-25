@@ -4,6 +4,8 @@ import Home from './scenes/Home';
 import SCHeaderScene from './scenes/SCHeader';
 import FooterScene from './scenes/Footer';
 import TestScene from './scenes/Test';
+import ObjectMapperScene from './scenes/ObjectMapper';
+import ArrayFormatterScene from './scenes/ArrayFormatter';
 
 export default function Routes() {
 
@@ -17,6 +19,8 @@ export default function Routes() {
                         <Route path={'footer'} element={<FooterScene />} />
                         <Route path={'test'} element={<TestScene />} />
                     </Route>
+                    <Route path={'/object-mapper'} element={<ObjectMapperScene />} />
+                    <Route path={'/array-formatter'} element={<ArrayFormatterScene />} />
                 </Route>
             </RRRoutes>
         </>

@@ -17,6 +17,8 @@ export default function SideNav({ }: Props) {
                         {/* <ListGroupItem className={'pb-2'}><Link to={'/components/header'}>Header</Link></ListGroupItem> */}
                         <ListGroupItem className={'pb-2'}><Link to={'/components/footer'}>Footer</Link></ListGroupItem>
                         <ListGroupItem className={'pb-2'}><Link to={'/components/test'}>Test</Link></ListGroupItem>
+                        <ListGroupItem className={'pb-2'}><Link to={'/object-mapper'}>Object Mapper</Link></ListGroupItem>
+                        <ListGroupItem className={'pb-2'}><Link to={'/array-formatter'}>Array Formatter</Link></ListGroupItem>
                     </div>
                 </Nav>
             </div>

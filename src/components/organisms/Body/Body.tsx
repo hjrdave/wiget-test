@@ -1,11 +1,11 @@
-import {Container, Row, Col} from 'react-bootstrap';
+import { Container, Row, Col } from 'react-bootstrap';
 
-interface Props{
+interface Props {
     children?: JSX.Element | JSX.Element[];
 }
-export default function Body({children}: Props){
+export default function Body({ children }: Props) {
 
-    return(
+    return (
         <>
             <Container fluid className={'p-3'}>
                 <Row>
