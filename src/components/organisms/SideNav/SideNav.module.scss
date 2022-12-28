@@ -1,10 +1,16 @@
 @use '../../../variables.scss' as *;
 
+.stickyContainer {
+    width: 200px;
+    background-color: $dark !important;
+    height: calc(100vh - 50px);
+}
+
 .compContainer {
     height: calc(100vh - 50px);
-    width: 200px;
     color: white;
     background-color: $dark !important;
+    z-index: 2;
 
     a {
         color: white;

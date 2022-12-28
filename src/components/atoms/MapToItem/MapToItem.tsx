@@ -1,6 +1,7 @@
 import React from 'react';
 import useNonInitialEffect from '../../../hooks/use-non-initial-effect';
-import { InputGroup, Form, DropdownButton, Dropdown, Button } from 'react-bootstrap';
+import useInput from '../../../hooks/use-input';
+import { InputGroup, Form, DropdownButton, Dropdown, Button, FormControl } from 'react-bootstrap';
 
 interface Props {
     mapFromValue: string;
@@ -12,10 +13,16 @@ interface Props {
 export default function MapToItem({ mapFromValue, mapToList, onChange, selectedMapToItems }: Props) {
 
     const [selectedMapTo, setSelectedMapTo] = React.useState('');
+    const { value, bind } = useInput('');
+
+    const searchList = (arr: string[], substr: string) => {
+        const searchedArr = arr.filter((item) => ((substr.length === 0) ? true : item.toLowerCase().startsWith(substr.toLowerCase())));
+        return searchedArr;
+    };
 
     useNonInitialEffect(() => {
         if (selectedMapTo) {
-            onChange({ [selectedMapTo]: mapFromValue })
+            onChange({ [selectedMapTo]: mapFromValue });
         }
     }, [selectedMapTo]);
 
@@ -37,9 +44,12 @@ export default function MapToItem({ mapFromValue, mapToList, onChange, selectedM
                     title={'Map To'}
                     align="end"
                 >
-                    <div style={{ maxHeight: '300px', overflowX: 'scroll' }}>
+                    <div className={'p-3'} style={{ borderBottom: '1px solid lightgrey' }}>
+                        <FormControl type={'text'} size={"sm"} {...bind} />
+                    </div>
+                    <div style={{ maxHeight: '300px', minWidth: '400px', overflowX: 'hidden' }}>
                         {
-                            mapToList.map((item, index) => (
+                            searchList(mapToList, value).map((item, index) => (
                                 <React.Fragment key={index}>
                                     <Dropdown.Item disabled={(Object.hasOwn(selectedMapToItems, item)) ? true : false} onClick={() => setSelectedMapTo(item)}>{item}</Dropdown.Item>
                                 </React.Fragment>

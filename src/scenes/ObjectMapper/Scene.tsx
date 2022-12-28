@@ -1,5 +1,6 @@
 import React from 'react';
 import { Col, Row } from 'react-bootstrap';
+import Sticky from 'react-stickynode';
 import ListMapper from '../../components/molecules/ListMapper';
 import { originalObject, mapList } from './org-to-mapped';
 import CodeEditor from '../../components/organisms/CodeEditor';
@@ -24,13 +25,16 @@ export default function Scene() {
                         />
                     </Col>
                     <Col>
-                        <CodeEditor
-                            type={'javascript'}
-                            onChange={(value) => null}
-                            defaultValue={``}
-                            height={'90vh'}
-                            value={mapperOutput}
-                        />
+                        <Sticky enabled={true} innerZ={2} top={75}>
+                            <CodeEditor
+                                type={'javascript'}
+                                onChange={(value) => null}
+                                defaultValue={``}
+                                height={'90vh'}
+                                value={mapperOutput}
+                            />
+                        </Sticky>
+
                     </Col>
                 </Row>
             </Col>

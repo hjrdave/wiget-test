@@ -75,7 +75,11 @@ export default function ListMapper({ mapFrom, mapToList, onChange }: Props) {
                                             mapFromValue={item}
                                             mapToList={mapToList}
                                             selectedMapToItems={mappedObj}
-                                            onChange={(obj) => setMappedObj({ ...mappedObj, ...obj })}
+                                            onChange={(obj) => {
+                                                const newObj = Object.entries(obj);
+                                                const noPropsWithSharedValues = Object.fromEntries(Object.entries(mappedObj).filter((item) => (newObj[0][1] !== item[1])));
+                                                setMappedObj({ ...noPropsWithSharedValues, ...obj });
+                                            }}
                                         />
                                     </Col>
                                 </Row>

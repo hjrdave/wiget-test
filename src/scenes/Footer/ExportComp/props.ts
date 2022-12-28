@@ -1,4 +1,4 @@
-export const footerProps = {
+export const props = {
     copyrightPath: 'https://www.sevencorners.com/about/corporate/about-us',
     address: {
         street: '303 Congressional Blvd.',
